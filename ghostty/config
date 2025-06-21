@@ -1,0 +1,19 @@
+#####
+# Reload settings
+# - Linux: ctrl+shift+,
+# - MacOS: cmd+shift+,
+#####
+
+# Visual
+# theme = Tomorrow Night Bright
+# theme = dark:shades-of-purple,light:default-light
+theme = iTerm2 Smoooooth
+macos-titlebar-style = tabs
+macos-titlebar-proxy-icon = hidden
+macos-option-as-alt = true
+
+# Keybinds
+keybind = global:cmd+ctrl+apostrophe=toggle_quick_terminal
+keybind = cmd+/=new_split:right
+keybind = cmd+.=new_split:down
+# keybind = super+i=inspector:toggle

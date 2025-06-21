@@ -1,0 +1,10 @@
+[user]
+	name = Budnieswski
+	email = 5929538+budnieswski@users.noreply.github.com
+
+[credential]
+	helper = store
+
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+

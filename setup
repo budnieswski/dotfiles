@@ -1,0 +1,14 @@
+#!/bin/bash
+
+PATH_HOME=$HOME
+PATH_CONFIG="${PATH_HOME}/.config"
+
+if ! command -v stow >/dev/null 2>&1; then
+  echo "err: 'stow' is not installed"
+  exit 1
+fi
+
+[[ ! -d "${PATH_CONFIG}/ghostty" ]] && mkdir -p "${PATH_CONFIG}/ghostty"
+stow ghostty -t "${PATH_CONFIG}/ghostty"
+
+stow git -t $PATH_HOME
