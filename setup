@@ -11,4 +11,8 @@ fi
 [[ ! -d "${PATH_CONFIG}/ghostty" ]] && mkdir -p "${PATH_CONFIG}/ghostty"
 stow ghostty -t "${PATH_CONFIG}/ghostty"
 
-stow git -t $PATH_HOME
+read -p "[GIT] Overwrite settings? [y/N] " -n 1
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  stow git -t $PATH_HOME
+fi
