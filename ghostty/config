@@ -14,15 +14,11 @@ macos-option-as-alt = true
 unfocused-split-opacity = 0.35
 font-family = JetBrainsMono Nerd Font Mono
 font-size = 12
-## temporary fix the issue https://github.com/ghostty-org/ghostty/issues/4504
-adjust-cell-width = -7%
-font-thicken = true
 font-feature = -calt
 font-feature = -liga
 font-feature = -dlig
-window-padding-x = 10
-window-padding-y = 10
-## end issue 4504
+# issue https://github.com/ghostty-org/ghostty/issues/4504
+adjust-cell-width = -7%
 
 # Keybinds
 keybind = global:cmd+ctrl+apostrophe=toggle_quick_terminal
@@ -33,3 +29,4 @@ keybind = cmd+.=new_split:down
 # Misc
 desktop-notifications = false
 window-new-tab-position = end
+scrollback-limit = 10000000
