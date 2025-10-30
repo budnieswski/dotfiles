@@ -1,5 +1,17 @@
+# MacOS
 .DS_Store
+.localized
 
 *.swp
 *.bak
 *~
+
+## from: nvim
+tt.*
+.tests
+doc/tags
+debug
+.repro
+foo.*
+*.log
+data

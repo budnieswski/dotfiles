@@ -30,6 +30,13 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 	echo ""
 fi
 
+read -p "[nvim theme] Install config? [y/N] " -n 1
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+	[[ ! -d "${PATH_CONFIG}/nvim" ]] && mkdir -p "${PATH_CONFIG}/nvim"
+	stow nvim -t "${PATH_CONFIG}/nvim"
+fi
+
 read -p "[GIT] Overwrite settings? [y/N] " -n 1
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
