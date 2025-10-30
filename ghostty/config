@@ -7,13 +7,14 @@
 # Visual
 # theme = Tomorrow Night Bright
 # theme = dark:shades-of-purple,light:default-light
-theme = iTerm2 Smoooooth
+# theme = iTerm2 Smoooooth
+theme = rose-pine-moon
 macos-titlebar-style = tabs
 macos-titlebar-proxy-icon = hidden
 macos-option-as-alt = true
 unfocused-split-opacity = 0.35
 font-family = JetBrainsMono Nerd Font Mono
-font-size = 12
+font-size = 14
 font-feature = -calt
 font-feature = -liga
 font-feature = -dlig
