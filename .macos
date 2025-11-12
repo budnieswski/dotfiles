@@ -175,7 +175,7 @@ defaults write NSGlobalDomain AppleWindowTabbingMode -string "always" # always /
 defaults write com.apple.dock mru-spaces -bool false
 
 # Mission Control - Group windows by application
-defaults write com.apple.dock expose-group-by-app -bool true
+defaults write com.apple.dock expose-group-apps -bool true
 
 # Mission Control - Hot Corners
 # Available values:
