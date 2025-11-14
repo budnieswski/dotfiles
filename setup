@@ -13,32 +13,45 @@ fi
 read -p "[Ghostty] Install config? [y/N] " -n 1
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-	[[ ! -d "${PATH_CONFIG}/ghostty" ]] && mkdir -p "${PATH_CONFIG}/ghostty"
-	stow ghostty -t "${PATH_CONFIG}/ghostty"
+  [[ ! -d "${PATH_CONFIG}/ghostty" ]] && mkdir -p "${PATH_CONFIG}/ghostty"
+  stow ghostty -t "${PATH_CONFIG}/ghostty"
 fi
 
 read -p "[iTerm2] Install config? [y/N] " -n 1
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-	[[ ! -d "${PATH_CONFIG}/iterm2" ]] && mkdir -p "${PATH_CONFIG}/iterm2"
-	stow iterm2 -t "${PATH_CONFIG}/iterm2"
-	echo -e "\ttip: Change iTerm setting to load the configs"
-	echo -e "\t\tiTerm2 > General > Settings:"
-	echo -e "\t\t\t[x] Load settings from custom..."
-	echo -e "\t\t\tSave Changes = Manually"
-	echo -e "\t\t\tReload the application"
-	echo ""
+  [[ ! -d "${PATH_CONFIG}/iterm2" ]] && mkdir -p "${PATH_CONFIG}/iterm2"
+  stow iterm2 -t "${PATH_CONFIG}/iterm2"
+  echo -e "\ttip: Change iTerm setting to load the configs"
+  echo -e "\t\tiTerm2 > General > Settings:"
+  echo -e "\t\t\t[x] Load settings from custom..."
+  echo -e "\t\t\tSave Changes = Manually"
+  echo -e "\t\t\tReload the application"
+  echo ""
 fi
 
 read -p "[nvim theme] Install config? [y/N] " -n 1
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-	[[ ! -d "${PATH_CONFIG}/nvim" ]] && mkdir -p "${PATH_CONFIG}/nvim"
-	stow nvim -t "${PATH_CONFIG}/nvim"
+  [[ ! -d "${PATH_CONFIG}/nvim" ]] && mkdir -p "${PATH_CONFIG}/nvim"
+  stow nvim -t "${PATH_CONFIG}/nvim"
 fi
 
 read -p "[GIT] Overwrite settings? [y/N] " -n 1
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   stow git -t $PATH_HOME
+fi
+
+read -p "[Firefox] Add user-overrides.js? [y/N] " -n 1
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  read -p "[Firefox] Profile path (root): " FF_PATH
+  if [[ ! -d "${FF_PATH}" ]]; then
+    echo "[Firefox] invalid path: $FF_PATH"
+  else
+    echo "fake installing"
+    # stow firefox -t "$FF_PATH"
+  fi
+  unset FF_PATH
 fi
