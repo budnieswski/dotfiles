@@ -56,6 +56,12 @@ defaults write com.apple.AppleMultitouchTrackpad Clicking -int 1
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -int 1
 
 #
+# Mouse
+############################################################
+# Scrolling Speed
+defaults write NSGlobalDomain com.apple.scrollwheel.scaling -float 0.75
+
+#
 # Keyboard
 ############################################################
 # Text Input: disable annoying completions
