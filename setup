@@ -37,6 +37,23 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   stow nvim -t "${PATH_CONFIG}/nvim"
 fi
 
+read -p "[oh-my-zsh] Install custom config? [y/N] " -n 1
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  if [[ -z "${ZSH:-}" ]]; then
+    echo "[oh-my-zsh] Environment variable ZSH not exists"
+    return 1 2>/dev/null || exit 1
+  fi
+
+  if [[ ! -d "$ZSH" ]]; then
+    echo "[oh-my-zsh] Directory ZSH not exists: $ZSH"
+    return 1 2>/dev/null || exit 1
+  fi
+
+  [[ ! -d "${ZSH}/custom" ]] && mkdir -p "${ZSH}/custom"
+  stow omz -t "${ZSH}/custom"
+fi
+
 read -p "[GIT] Overwrite settings? [y/N] " -n 1
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
