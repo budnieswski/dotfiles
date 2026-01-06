@@ -1,7 +1,3 @@
-#############
-# My settings
-#############
-
 __git_checkout_hard() {
     local b
     if [ $# -eq 0 ]; then
