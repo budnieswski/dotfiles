@@ -50,7 +50,22 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     return 1 2>/dev/null || exit 1
   fi
 
+  # ensure custom/ directory exists
   [[ ! -d "${ZSH}/custom" ]] && mkdir -p "${ZSH}/custom"
+
+  if [[ -d "${ZSH}/.git" ]]; then
+    # ignore custom/ in oh-my-zsh git repository
+    EXCLUDE_FILE="${ZSH}/.git/info/exclude"
+    grep -qx "custom/" "$EXCLUDE_FILE" 2>/dev/null || echo "custom/" >>"$EXCLUDE_FILE"
+
+    # remove custom/ from git index if it is already tracked
+    if git -C "$ZSH" ls-files custom --error-unmatch >/dev/null 2>&1; then
+      echo "[oh-my-zsh] Removing custom/ from git index"
+      git -C "$ZSH" rm -r --cached custom >/dev/null 2>&1
+      git -C "$ZSH" reset --hard >/dev/null 2>&1
+    fi
+  fi
+
   stow omz -t "${ZSH}/custom"
 fi
 
