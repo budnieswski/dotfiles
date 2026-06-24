@@ -5,21 +5,18 @@
 #####
 
 # Visual
-# theme = Tomorrow Night Bright
-# theme = dark:shades-of-purple,light:default-light
 # theme = iTerm2 Smoooooth
-theme = rose-pine-moon
+# theme = TokyoNight
+# theme = Tomorrow Night
+theme = Rose Pine Moon
+unfocused-split-opacity = 0.35
 macos-titlebar-style = tabs
 macos-titlebar-proxy-icon = hidden
-macos-option-as-alt = true
-unfocused-split-opacity = 0.35
 font-family = JetBrainsMono Nerd Font Mono
 font-size = 14
-font-feature = -calt
-font-feature = -liga
-font-feature = -dlig
+font-feature = -calt, -dlig, -liga # disable ligatures
 # issue https://github.com/ghostty-org/ghostty/issues/4504
-adjust-cell-width = -7%
+adjust-cell-width = -5%
 
 # Keybinds
 keybind = global:cmd+ctrl+apostrophe=toggle_quick_terminal
